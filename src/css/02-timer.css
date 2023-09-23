@@ -1,0 +1,26 @@
+.timer {
+    display: flex;
+    width: min-content;
+    gap: 10px;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+.field {
+  padding: 5px;
+  
+}
+
+.label {
+font-size: 15px;
+text-transform: uppercase;
+
+}
+
+.value {
+    font-size: 30px;
+    color:rgb(47, 109, 171);
+    
+
+}
