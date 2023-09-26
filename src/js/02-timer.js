@@ -71,10 +71,6 @@ function onStartBtnClick() {
     
 }
  
-
-
-
-
 function addLeadingZero(value) {
     return String(value).padStart(2,'0')
 }
@@ -97,3 +93,7 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+
+// const notifyOptions = {
+//     timeout: 3000,
+// }
