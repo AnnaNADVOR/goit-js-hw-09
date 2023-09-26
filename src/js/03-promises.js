@@ -6,22 +6,24 @@ form.addEventListener('submit', onSubmitForm);
  
 function onSubmitForm(event) {
   event.preventDefault();
-
+  
   const amount = Number(form.amount.value);
   let delay = Number(form.delay.value);
   const  step = Number(form.step.value);
  
   for (let i = 1; i <= amount; i += 1) {
-  const position = i; 
+    const position = i; 
 
-  createPromise(position, delay).then(({ position, delay })  => {
-  Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
-}).catch(({ position, delay })  => 
-  Notify.failure(`Rejected promise ${position} in ${delay}ms`));
- delay += step; 
+    createPromise(position, delay)
+      .then(({ position, delay }) => {
+        Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
+      })
+      .catch(({ position, delay }) => {
+        Notify.failure(`Rejected promise ${position} in ${delay}ms`);
+      });
+    delay += step; 
+  }
 }
-}
-
 
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;

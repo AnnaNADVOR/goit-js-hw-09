@@ -22,7 +22,7 @@ const options = {
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
-        // console.log(selectedDates[0]);
+        console.log(selectedDates[0]);
         const currentDate = Date.now();
         if (selectedDates[0] < currentDate) {
             Notify.failure('Please choose a date in the future!');  
@@ -66,9 +66,7 @@ function onStartBtnClick() {
 
     updateTimer();
 
-    intervalId = setInterval(updateTimer, 1000);
-
-    
+    intervalId = setInterval(updateTimer, 1000); 
 }
  
 function addLeadingZero(value) {
@@ -94,6 +92,3 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-// const notifyOptions = {
-//     timeout: 3000,
-// }
